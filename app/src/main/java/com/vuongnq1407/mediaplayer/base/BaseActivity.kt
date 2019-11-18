@@ -1,13 +1,13 @@
 package com.vuongnq1407.mediaplayer.base
 
 import android.os.Bundle
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseActivity: AppCompatActivity() {
-
+  
+    @get:LayoutRes
     abstract val layoutResId: Int
-    abstract fun initData(savedInstanceState: Bundle?)
-    abstract fun initComponents()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,4 +15,7 @@ abstract class BaseActivity: AppCompatActivity() {
         initData(savedInstanceState)
         initComponents()
     }
+
+    abstract fun initData(savedInstanceState: Bundle?)
+    abstract fun initComponents()
 }
